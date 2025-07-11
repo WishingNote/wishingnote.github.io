@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 필수 메타 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 검색엔진 최적화 -->
+  <title>Special Thanks - WishingNote</title>
+  <meta name="description" content="WishingNote Special Thanks - 위싱노트 개발에 도움을 주신 분들께 감사드립니다." />
+  <meta name="keywords" content="위싱노트, Special Thanks, 감사, 개발팀, 기여자" />
+  <meta name="author" content="WishingNote Team" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images//icons/favicon.ico" type="image/x-icon" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(180deg, #8f53fe 0%, #fd7eab 100%);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      z-index: 10000;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #logo-lottie {
+      width: 48px;
+      height: 48px;
+    }
+    .menu-toggle {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+    }
+    .menu-toggle div {
+      width: 24px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 220px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 2rem 1rem;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+    .menu img {
+      width: 100px;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+    .menu a {
+      color: white;
+      display: block;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .content-section {
+      margin-top: 6rem;
+      padding: 2rem 1.5rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .content-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    .content-card h1 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .content-card h2 {
+      font-size: 1.3rem;
+      color: #555;
+      margin: 1.5rem 0 0.8rem 0;
+    }
+    .content-card p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .content-card ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    .content-card li {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .thanks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .thanks-item {
+      background: #f8f9fa;
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid #e9ecef;
+    }
+    .thanks-item h3 {
+      color: #495057;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .thanks-item p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .wini-section {
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .wini-section img {
+      max-width: 120px;
+      margin-bottom: 1rem;
+    }
+    .wini-section p {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    footer {
+      background: #222;
+      color: #eee;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body onclick="closeMenu(event)">
+  <header>
+    <div id="logo-lottie"></div>
+    <div class="menu-toggle" onclick="toggleMenu(event)">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="menu" id="menu">
+      <img src="/images/winnie_happy.png" alt="위니" />
+      <a href="/" onclick="closeMenu(event)">홈</a>
+      <a href="/service" onclick="closeMenu(event)">이용약관</a>
+      <a href="/policy" onclick="closeMenu(event)">개인정보처리방침</a>
+      <a href="/thanks" onclick="closeMenu(event)">Special Thanks</a>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="content-card">
+      <h1>Special Thanks</h1>
+      
+      <p>WishingNote가 여러분께 도달할 수 있도록 도움을 주신 모든 분들께 진심으로 감사드립니다. 여러분의 지원과 기여가 없었다면 이 프로젝트는 완성될 수 없었습니다.</p>
+      
+      <h2>개발팀</h2>
+      <div class="thanks-grid">
+        <div class="thanks-item">
+          <h3>기획 & 디자인</h3>
+          <p>사용자 경험을 최우선으로 생각하며<br>아름다운 인터페이스를 설계해주신<br>디자인팀 여러분</p>
+        </div>
+        <div class="thanks-item">
+          <h3>개발</h3>
+          <p>끊임없는 노력과 열정으로<br>완벽한 서비스를 구현해주신<br>개발팀 여러분</p>
+        </div>
+        <div class="thanks-item">
+          <h3>기획</h3>
+          <p>사용자의 니즈를 정확히 파악하고<br>혁신적인 아이디어를 제공해주신<br>기획팀 여러분</p>
+        </div>
+      </div>
+      
+      <h2>외부 협력자</h2>
+      <div class="thanks-grid">
+        <div class="thanks-item">
+          <h3>UI/UX 디자이너</h3>
+          <p>직관적이고 아름다운<br>사용자 인터페이스를<br>제작해주신 분들</p>
+        </div>
+        <div class="thanks-item">
+          <h3>QA 테스터</h3>
+          <p>꼼꼼한 테스트를 통해<br>완성도를 높여주신<br>테스터 여러분</p>
+        </div>
+        <div class="thanks-item">
+          <h3>베타 사용자</h3>
+          <p>초기 버전부터 함께하며<br>소중한 피드백을 제공해주신<br>베타 테스터 여러분</p>
+        </div>
+      </div>
+      
+      <h2>오픈소스 커뮤니티</h2>
+      <p>WishingNote는 수많은 오픈소스 프로젝트들의 도움을 받아 만들어졌습니다. 전 세계의 개발자들이 공유한 지식과 도구들에 깊은 감사를 드립니다.</p>
+      
+      <h2>가족과 친구들</h2>
+      <p>끊임없는 지원과 격려를 해주신 가족들과 친구들, 그리고 이 프로젝트를 믿고 기다려주신 모든 분들께 감사드립니다. 여러분의 응원이 가장 큰 힘이 되었습니다.</p>
+      
+      <h2>사용자 여러분</h2>
+      <p>가장 중요한 것은 바로 여러분입니다. WishingNote를 사용해주시고, 피드백을 주시며, 함께 성장해주시는 모든 사용자 여러분께 진심으로 감사드립니다. 여러분의 꿈과 목표가 WishingNote의 존재 이유입니다.</p>
+    </div>
+  </section>
+
+  <section class="wini-section">
+    <img src="/images/wini.png" alt="위니 마스코트" />
+    <p>위니가 여러분의 꿈을 항상 응원해요! 💖</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2017 WishingNote. All rights reserved.</p>
+    <p><a href="mailto:ios.kiwon@gmail.com">문의하기: ios.kiwon@gmail.com</a></p>
+  </footer>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('logo-lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/wishingnote_lottie.json'
+    });
+
+    function toggleMenu(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function closeMenu(event) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

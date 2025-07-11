@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 필수 메타 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 검색엔진 최적화 -->
+  <title>[위싱노트] 친구와 위싱하자 - WishingNote</title>
+  <meta name="description" content="오늘 할 일부터 언젠가 이루고 싶은 꿈까지, 위싱노트에 기록하고 매일 다짐하세요. 당신의 소원, 더 이상 잊히지 않게." />
+  <meta name="keywords" content="위싱노트, 위시리스트, 버킷리스트, 다이어리, 커플앱, 위시노트, 소원성취, 목표달성, 목표관리, 습관, 일기장, 자기개발, 여행, 취미, 자기계발, 다이어리, 꿈, 연인, 데이트" />
+  <meta name="author" content="WishingNote Team" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images//icons/favicon.ico" type="image/x-icon" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(180deg, #8f53fe 0%, #fd7eab 100%);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+      z-index: 10000;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #logo-lottie {
+      width: 48px;
+      height: 48px;
+    }
+    .menu-toggle {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+    }
+    .menu-toggle div {
+      width: 24px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 220px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 2rem 1rem;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+    .menu img {
+      width: 100px;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+    .menu a {
+      color: white;
+      display: block;
+      text-decoration: none;
+      margin: 1rem 0;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .main-banner {
+      width: 20%;
+      max-width: 720px;
+      margin: 5rem auto 4rem;
+      display: block;
+      border-radius: 12px;
+    }
+    .hero {
+      text-align: center;
+      padding: 0 1.5rem 3rem;
+      background: transparent;
+    }
+    .hero h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #fefefe;
+    }
+    .story-section {
+      text-align: center;
+      padding: 4rem 1.5rem 4rem;
+    }
+    .story-section img {
+      max-width: 300px;
+      margin: 2rem auto 1rem;
+      display: block;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .story-section h2 {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .story-section p {
+      font-size: 1rem;
+      color: #fefefe;
+      margin-bottom: 3rem;
+    }
+    .wini {
+      text-align: center;
+      margin: 4rem 0;
+      background: transparent;
+    }
+    .wini img {
+      max-width: 150px;
+    }
+    .wini p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .app-card {
+      margin: 4rem auto;
+      padding: 1.5rem;
+      max-width: 340px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      background: white;
+      text-align: center;
+    }
+    .app-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .app-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+    .download-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .download-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .download-buttons a img {
+      width: 30px;
+      height: 30px;
+    }
+    .download-buttons a:hover {
+      opacity: 0.85;
+    }
+    footer {
+      display: none;
+    }
+  </style>
+</head>
+<body onclick="closeMenu(event)">
+  <header>
+    <div id="logo-lottie"></div>
+    <div class="menu-toggle" onclick="toggleMenu(event)">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="menu" id="menu">
+      <img src="/images/winnie_happy.png" alt="위니" />
+      <a href="/" onclick="closeMenu(event)">홈</a>
+      <a href="/service" onclick="closeMenu(event)">이용약관</a>
+      <a href="/policy" onclick="closeMenu(event)">개인정보처리방침</a>
+      <a href="/thanks" onclick="closeMenu(event)">Special Thanks</a>
+    </div>
+  </header>
+
+  <img src="/images/main-banner.png" alt="WishingNote Main Banner" class="main-banner" />
+
+  <section class="hero">
+    <h1>당신의 꿈, 위싱노트에서 이루어보세요</h1>
+    <p>
+      오늘 할 일부터 언젠가 이뤄낼 꿈까지<br />
+      위싱노트에 기록하고 매일 다짐해보세요.<br />
+      당신의 소원, 더 이상 잊히지 않게.
+    </p>
+  </section>
+
+  <section class="story-section">
+    <img src="/images/onboarding_01.png" alt="onboarding_01" />
+    <h2>위싱노트는 이루어 집니다.</h2>
+    <p>나의 내면에 있는 꿈과 목표를<br>의식의 영역으로 끌어올려 매일 보고 다짐하면<br>성공에 이를 수 있다고 믿습니다.</p>
+
+    <img src="/images/onboarding_02.png" alt="onboarding_02" />
+    <h2>크든 작든 우리의 꿈은<br>모두 소중해요.</h2>
+    <p>거창할 필요도 없고 원대하지 않아도 괜찮아요.<br>중요한 건 이루고 싶은 것이 무엇인지<br>명확히 적을 수 있어야 합니다.</p>
+
+    <img src="/images/onboarding_03.png" alt="onboarding_03" />
+    <h2>꿈을 이룬 사람들을 보며<br>행복회로를 그려요.</h2>
+    <p>나와 같은 꿈을 이룬 사람들의 글을 보면<br>우리는 행동할 동기를 얻고 목표달성을 위한<br>구체적인 마인드맵을 그릴 수 있습니다.</p>
+
+    <img src="/images/onboarding_04.png" alt="onboarding_04" />
+    <h2>꿈을 현실로 만들어줄<br>작지만 강한 루틴, 다짐</h2>
+    <p>이미 이루어졌다고 믿고 생각하면서<br>매일 다짐하세요. 내 안의 무한한 긍정의 에너지가<br>꿈을 현실로 만들어 줄 것입니다.</p>
+  </section>
+
+  <section class="wini">
+    <img src="/images/wini.png" alt="위니 마스코트" />
+    <p>위니가 당신의 꿈을 항상 응원해요! 💖</p>
+  </section>
+
+  <section class="app-card">
+    <h2>WishingNote 앱 다운로드</h2>
+    <p>소원을 기록하고 이루는 여정을 지금 시작하세요.</p>
+    <div class="download-buttons">
+      <a href="https://apps.apple.com/us/app/%EC%9C%84%EC%8B%B1%EB%85%B8%ED%8A%B8-%EB%B2%84%ED%82%B7%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A7%9E%EC%B6%A4-%EA%B4%80%EB%A6%AC-sns/id1158669538">
+        <img src="/images/icons/appstore.png" alt="App Store"> iOS 앱
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.nbliss.wishingnote">
+        <img src="/images/icons/playstore.png" alt="Google Play"> Android 앱
+      </a>
+    </div>
+  </section>
+
+  <footer style="background: #222; color: #eee; padding: 2rem 1rem; text-align: center;">
+  <p>&copy; 2025 WishingNote. All rights reserved.</p>
+  <p><a href="mailto:contact@wishingnote.com" style="color:#ccc">문의하기: contact@wishingnote.com</a></p>
+</footer>
+
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('logo-lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/wishingnote_lottie.json'
+    });
+
+    function toggleMenu(event) {
+      event.stopPropagation();
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function closeMenu(event) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
